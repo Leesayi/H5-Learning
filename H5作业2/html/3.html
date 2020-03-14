@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Leesayi 209 " />
+    <title>文件预览测试网页</title>
+</head>
+
+<body>
+    <form action="">
+        <input type="file" name="myFile" id="myFile" onchange="getFileContent();"><br>
+        <input type="submit">
+    </form>
+    <img src="" alt="">
+    <script>
+        function getFileContent() {
+            var reader = new FileReader();
+            var file = document.querySelector("#myFile").files;
+            reader.readAsDataURL(file[0]);
+            reader.onload = function () {
+                document.querySelector("img").src = reader.result;
+            }
+        }
+    </script>
+</body>
+
+</html>

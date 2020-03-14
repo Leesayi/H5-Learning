@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Leesayi 209 "/>
+    <title>title</title>
+    <link rel="stylesheet" href="../css/fromcss.css">
+</head>
+
+<body>
+    <form>
+        <fieldset>
+            <legend>项目信息</legend>
+
+            <label for="projectName">项目名称:</label>
+            <input type="text" name="projectName" id="projectName" placeholder="必填"  autofocus required>
+
+            <label for="projectPriority">优先级:</label>
+            <input type="range" name="projectPriority" id="projectPriority" value="35">
+
+            <label for="projectTime">预估工期:</label>
+            <input type="text" name="projectTime" id="projectTime" required value="20">
+            <label for="projectTime">天</label>
+            <br>
+            <label for="startTime">开始日期:</label>
+            <input type="date" name="startTime" id="startTime" required>
+
+            <label for="projectEmail">邮箱地址:</label>
+            <input type="email" name="projectEmail" id="projectEmail" placeholder="可输入多个，用逗号隔开" required multiple>
+
+            <label for="projectURL">URL地址:</label>
+            <input type="url" name="projectURL" id="projectURL" placeholder="必填" required>
+
+            <label for="">当前进度:</label>
+            <progress type="number" max="100" min="0" value="35" name="userScore" id="userScore"></progress>
+
+            <details class="menu">
+                <summary>任务分配情况：</summary>
+                <ul type="">
+                    <li>
+                        需求分析
+                        <meter type="number" max="100" min="0" value="44" class="ulmeter"></meter>
+                    </li>
+                    <li>
+                        界面设计
+                        <meter type="number" max="100" min="0" value="55" class="ulmeter"></meter>
+                    </li>
+                    <li>
+                        页面制作
+                        <meter type="number" max="100" min="0" value="76" class="ulmeter"></meter>
+                    </li>
+                    <li>
+                        代码实现
+                        <meter type="number" max="100" min="0" value="66" class="ulmeter"></meter>
+                    </li>
+                    <li>
+                        系统测试
+                        <meter type="number" max="100" min="0" value="88" class="ulmeter"></meter>
+                    </li>
+                </ul>
+            </details>
+
+            <label for="projectColor">项目标识色:</label>
+            <input type="color" name="projectColor" id="projectColor" >
+
+            <input type="submit">
+
+        </fieldset>
+    </form>
+</body>
+<script>
+    function myFunction() {
+        document.getElementById("projectEmail").multiple = true;
+    }
+    </script>
+
+</html>

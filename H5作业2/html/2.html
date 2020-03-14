@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Leesayi 209 " />
+    <title>全屏测试网页</title>
+</head>
+
+<body>
+    <div>
+        <img src="../picture/weiyu.jpg">
+        <input type="button" id="full" value="全屏">
+        <input type="button" id="cancelFull" value="退出全屏">
+        <input type="button" id="isFull" value="当前状态">
+    </div>
+    <script>
+        window.onload = function () {
+            var div = document.querySelector("div");
+            document.querySelector("#full").onclick = function () {
+                if (div.requestFullscreen) {
+                    div.requestFullscreen();
+                }
+                else if (div.webkitRequestFullscreen) {
+                    div.webkitRequestFullScreen();
+                }
+                else if (div.mozRequestFullscreen) {
+                    div.mozRequestFullScreen();
+                }
+                else if (div.msRequestFullscreen) {
+                    div.msRequestFullScreen();
+                }
+            }
+            document.querySelector("#cancelFull").onclick = function () {
+                if (document.cancelFullScreen) {
+                    document.cancelFullScreen();
+                }
+                else if (document.webkitCancelFullScreen) {
+                    document.webkitCancelFullScreen();
+                }
+                else if (document.mozCancelFullScreen) {
+                    document.mozCancelFullScreen();
+                }
+                else if (document.msCancelFullScreen) {
+                    document.msCancelFullScreen();
+                }
+            }
+            document.querySelector("#isFull").onclick = function () {
+                if (document.fullscreenElement || document.webFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement) {
+                    alert(true);
+                } else {
+                    alert(false);
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

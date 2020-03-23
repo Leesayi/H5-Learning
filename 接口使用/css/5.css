@@ -15,7 +15,7 @@ a{
     text-align: center;
 }
 .player{
-    width: 720px;
+    width: 576px;
     height:360px;
     margin: 0 auto;
     background: url()center no-repeat;
@@ -25,7 +25,6 @@ a{
 video{
     height: 100%;
     margin: 0 auto;
-    display: none;
 }
 .controls{
     width: 720px;

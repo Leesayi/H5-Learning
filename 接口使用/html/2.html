@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    sessionstorage的使用:
+    <!-- 
+        关闭浏览器 数据即消失
+        存储数据到本地。存储的容量5mb左右。
+        setItem( key, value):存储数据，以键值对的方式存储
+        getItem(key):获取数据，通过指定名称的key获取对应的value值
+        removeItem(key):删除数据，通过指定名称key删除对应的值
+        clear():清空所有存储的内容 
+    -->
+
+    <input type="text" id="userName"><br>
+    <input type="button" value="设置数据" id="setData">
+    <input type="button" value="获取数据" id="getData">
+    <input type="button" value="删除数据" id="removeData">
+</body>
+
+<script>
+    document.querySelector("#setData").onclick = function () {
+        var name = document.querySelector("#userName").value;
+        window.sessionStorage.setItem("userName", name);
+    }
+
+    document.querySelector("#getData").onclick = function () {
+        var name = window.sessionStorage.getItem("userName");
+        alert(name);
+    }
+    
+    document.querySelector("#removeData").onclick = function () {
+        window.sessionStorage.removeItem("userName");
+    }
+</script>
+
+</html>

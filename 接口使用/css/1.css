@@ -1,0 +1,15 @@
+.div1 {
+    padding: 10px;
+    float: left;
+    min-height: 300px;
+    background-color: aquamarine;
+    width: 300px;
+}
+
+.div2 {
+    padding: 10px;
+    float: left;
+    min-height: 300px;
+    background-color: crimson;
+    width: 300px;
+}

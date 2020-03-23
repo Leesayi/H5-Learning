@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/1.css" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="div1" id="div1">
+        <p id="pe" draggable="true">试着把我拖过去</p>
+        <p id="pe1" draggable="true">试着把我也拖过去</p>
+    </div>
+    <div class="div2" id="div2"></div>
+</body>
+<script>
+    var p = document.querySelector("#pe");
+    var p1 = document.querySelector("#pe1");
+    var div2 = document.querySelector("#div2");
+    var div1 = document.querySelector("#div1");
+
+    p.ondragstart = function () {
+        console.log("ondragstart");
+    }
+    p.ondragend = function () {
+        console.log("ondragend");
+    }
+    p.ondragleave = function () {
+        console.log("拖拽元素：ondragleave");
+    }
+    p.ondrag = function () {
+        //console.log("ondrag");
+    }
+
+    div2.ondragenter = function () {
+        console.log("ondragenter");
+    }
+    div2.ondragover = function (e) {
+        //console.log("ondragover");
+        e.preventDefault();//阻止默认行为
+    }
+    div2.ondrop = function () { //浏览器默认阻止ondrop事件触发，必须在ondragover内阻止浏览器的此行为
+        console.log("ondrop");
+        div2.appendChild(p);
+    }
+    div2.ondragleave = function () {
+        console.log("目标元素：ondragleave");
+    }
+
+    div1.ondragover = function (e) {
+        //console.log("ondragover");
+        e.preventDefault();//阻止默认行为
+    }
+    div1.ondrop = function () { //浏览器默认阻止ondrop事件触发，必须在ondragover内阻止浏览器的此行为
+        console.log("ondrop");
+        div1.appendChild(p);
+    }
+</script>
+
+</html>
